@@ -8,27 +8,27 @@
 <style>
 #colore1{background-color:#AAC3F9 ;
     width: 100% ;
-    hight: 400px; 
+    hight: 100px; 
     border: 1px solid black;}
 
 #colore2{background-color:#65000B ;
     width: 100% ;
-    hight: 400px; 
+    hight: 100px; 
     border: 1px solid black;}
 
 #colore3{background-color:#009874 ;
     width: 100% ;
-    hight: 400px; 
+    hight: 100px; 
     border: 1px solid black;}
 
 #colore4{background-color:#ff7373 ;
     width: 100% ;
-    hight: 400px; 
+    hight: 100px; 
     border: 1px solid black;}
 
 #colore5{background-color:##000f89 ;
     width: 100% ;
-    hight: 400px; 
+    hight: 100px; 
     border: 1px solid black;}
 
 </style>
