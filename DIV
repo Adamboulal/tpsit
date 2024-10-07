@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+#colore1{background-color:#AAC3F9 ;
+    width: 100% ;
+    hight: 400px; 
+    border: 1px solid black;}
+
+#colore2{background-color:#65000B ;
+    width: 100% ;
+    hight: 400px; 
+    border: 1px solid black;}
+
+#colore3{background-color:#009874 ;
+    width: 100% ;
+    hight: 400px; 
+    border: 1px solid black;}
+
+#colore4{background-color:#ff7373 ;
+    width: 100% ;
+    hight: 400px; 
+    border: 1px solid black;}
+
+#colore5{background-color:##000f89 ;
+    width: 100% ;
+    hight: 400px; 
+    border: 1px solid black;}
+
+</style>
+
+</head>
+<body>
+<div id="colore1"></div>
+
+
+<div id="colore2"></div>
+
+
+<div id="colore3"></div>
+
+
+<div id="colore4"></div>
+
+
+<div id="colore5"></div>
+
+
+</body>
+</html>
