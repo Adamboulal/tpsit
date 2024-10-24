@@ -1,148 +1,174 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Errori Software e Conseguenze</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .item {
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            margin: 10px;
-            padding: 15px;
-            width: calc(45% - 40px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-    .image {
-            flex: 1;
-            background-size: cover;
-            background-position: center;
-            height: 200px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .description {
-            flex: 2;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I più grandi bug nella storia</title>
+<style>
+  body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  }
+  .contenitore{
+    width: 900px;
+    margin: 0;
+    padding: 10px
+    background: white;
+    border: 1px solid black;
+  }
+  .oggetto{
+    display:flex;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: #E4E5E0;
+  }
+  .immagine{
+    flex:1;
+    padding: 10px;
+  }
+  .testo{
+    flex:2;
+    padding:10px;
+  }
+  img{
+    width: 100%;
+    height: 300px;
+    border: 5px solid black;
+  }
+  </style>
 </head>
 <body>
-
-    <h1>Errori Software e Conseguenze Economiche</h1>
-    <div class="container">
-
-        <div class="item">
-            <div class="image" style="background-image: url('Ariane5');"></div>
-            <div class="description">
-                <h2>Circa 370 milioni di dollari</h2>
-                <p>Il lancio inaugurale del razzo Ariane 5 dell'Agenzia Spaziale Europea fallì a causa di un bug nel software. Il sistema di navigazione riutilizzava codice dall'Ariane 4, che non era stato adattato ai cambiamenti delle prestazioni del nuovo razzo. Ciò provocò un errore di overflow in una conversione di un numero a virgola mobile. Il razzo deviò dalla sua rotta e fu distrutto.
-                    Perdita di un razzo da 370 milioni di dollari e di carichi utili scientifici di alto valore.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('URL_IMMAGINE_1');"></div>
-            <div class="description">
-                <h2>Circa 193 milioni di dollari</h2>
-                <p>QQuesto errore si verificò perché il software che controllava il sistema di navigazione del Mars Climate Orbiter utilizzava unità imperiali (libbre-forza secondi) invece di unità metriche (newton secondi). La sonda entrò nell'atmosfera di Marte troppo bassa e fu distrutta.
-Perdita della sonda spaziale e della missione.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('knight');"></div>
-            <div class="description">
-                <h2>Circa 440 milioni di dollari in 45 minuti</h2>
-                <p>Knight Capital, una grande società di trading finanziario, installò un aggiornamento del software difettoso su uno dei suoi server. Questo software iniziò a fare milioni di operazioni di borsa errate, facendo crollare il prezzo delle azioni. L'azienda perse circa 440 milioni di dollari in meno di un'ora e fu successivamente acquisita.
-Perdita finanziaria enorme e fine dell'azienda come entità indipendente.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('therac');"></div>
-            <div class="description">
-                <h2>Diverse vite umane</h2>
-                <p>Therac-25 era una macchina per la radioterapia utilizzata negli ospedali. A causa di bug nel software, in alcune circostanze la macchina somministrava dosi di radiazioni letali ai pazienti. Il bug si manifestava solo in determinate sequenze operative, quindi non fu scoperto subito.
-Almeno 5 persone morirono e molte altre subirono gravi lesioni a causa di sovraesposizione alle radiazioni.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('Patriot Missile');"></div>
-            <div class="description">
-                <h2>Perdita di vite e milioni di dollari</h2>
-                <p>Un errore di arrotondamento in un sistema di temporizzazione del software del Patriot Missile causò il fallimento dell'intercettazione di un missile Scud iracheno. Il missile colpì una caserma dell'esercito statunitense, uccidendo 28 soldati.
-Perdita di vite umane e di fiducia nella tecnologia di difesa.</p>
-                
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('bug');"></div>
-            <div class="description">
-                <h2>Circa 100 miliardi di dollari in preparazione e mitigazione</h2>
-                <p>Sebbene non ci sia stata una grande catastrofe, il "Millennium Bug" ha richiesto investimenti massicci per evitare il collasso dei sistemi informatici. Il bug era causato dal fatto che molti software utilizzavano solo le ultime due cifre dell'anno (es. '99 per 1999), il che poteva portare a malfunzionamenti passando all'anno 2000.
-Anche se il bug non causò gravi danni, il costo per la prevenzione fu enorme.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('intel');"></div>
-            <div class="description">
-                <h2>Circa 475 milioni di dollari</h2>
-                <p>Un bug nei processori Intel Pentium causava errori di calcolo nelle divisioni in virgola mobile. Questo difetto divenne un problema di pubbliche relazioni per Intel dopo che gli scienziati iniziarono a notare discrepanze nei loro calcoli. Intel alla fine dovette ritirare i processori difettosi e rimborsare i clienti.
-Costi enormi di sostituzione e danno alla reputazione di Intel.
-8.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('URL_IMMAGINE_1');"></div>
-            <div class="description">
-                <h2>Perdita di un'auto</h2>
-                <p>Un aggiornamento del software del Tesla Model S causò il blocco dei freni a mano di alcune auto. In un caso, questo portò all'incendio e alla perdita completa di un'auto.
-Danni materiali e possibili rischi per la sicurezza.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('AT');"></div>
-            <div class="description">
-                <h2>Decine di milioni di dollari</h2>
-                <p>Un aggiornamento software difettoso nel sistema di commutazione di AT&T portò a un blocco che durò circa 9 ore. Durante questo periodo, milioni di chiamate telefoniche furono interrotte negli Stati Uniti.
-Danno alla reputazione e perdite finanziarie per AT&T, oltre a disagio per milioni di utenti.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="image" style="background-image: url('boeng');"></div>
-            <div class="description">
-                <h2>Oltre 20 miliardi di dollari, molte vite perse</h2>
-                <p>Il sistema MCAS (Maneuvering Characteristics Augmentation System) del Boeing 737 Max, progettato per correggere il comportamento di volo dell'aereo, aveva un bug che portava a una serie di incidenti aerei mortali. Questo errore portò alla perdita di controllo degli aerei in determinate situazioni, causando due incidenti fatali che uccisero 346 persone.
-La Boeing subì gravi perdite economiche, danni alla reputazione e costi enormi per riparare il software e certificare nuovamente il modello. L’aereo fu bloccato a terra per quasi due anni.</p>
-            </div>
-        </div>
-
+  <div class="contenitore">
+    <div class="oggetto">
+      <div class="immagine">
+        <img src="Ariane5" alt="Ariane 5" style=float:left; margin: 10px">
+      </div>
+      <div class="testo">
+        <h2>Ariane 5</h2>
+        <p>Il lancio inaugurale del razzo Ariane 5 dell'Agenzia Spaziale Europea fallì a causa di un bug nel software. 
+       Il sistema di navigazione riutilizzava codice dall'Ariane 4, che non era stato adattato ai cambiamenti delle prestazioni del nuovo razzo. 
+       Ciò provocò un errore di overflow in una conversione di un numero a virgola mobile. Il razzo deviò dalla sua rotta e fu distrutto.
+       Causò danni per 370 milioni di dollari e la perdita di carichi utili scientifici di alto valore.
+        </p>
+    </div>
+   </div>
+    <div class="oggetto">
+      <div class="immagine">
+        <img src="marsorbiter.jpg" alt="mars orbiter" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Mars climate orbiter</h2>
+        <p>L'errore del Mars Climate Orbiter si verificò perché il software che controllava il sistema di navigazione utilizzava unità imperiali
+         invece di unità metriche. La sonda entrò nell'atmosfera di Marte troppo bassa e fu distrutta.
+        Causò 193 milioni di dollari di danni e la perdita della sonda spaziale.</p>
+     </div>
+  </div>
+    <div class="oggetto">
+      <div class="immagine">
+        <img src="knight" alt="knight capital" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Knight Capital</h2>
+        <p>Knight Capital, una grande società di trading finanziario, installò un aggiornamento del software difettoso su uno dei suoi server. 
+          Questo software iniziò a fare milioni di operazioni di borsa errate, facendo crollare il prezzo delle azioni. 
+          L'azienda perse circa 440 milioni di dollari in meno di un'ora e fu successivamente acquisita.
+        Ciò causò un enorme perdita finanziaria.</p>
+     </div>
+    </div>
+       <div class="oggetto">
+      <div class="immagine">
+        <img src="therac" alt="therac 25" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Therac 25</h2>
+        <p>Therac-25 era una macchina per la radioterapia utilizzata negli ospedali. 
+          A causa di bug nel software, in alcune circostanze la macchina somministrava dosi di radiazioni letali ai pazienti. 
+          Il bug si manifestava solo in determinate sequenze operative, quindi non fu scoperto subito.
+        Costò 5 vite umane e molte altre subirono gravi lesioni a causa di sovraesposizione alle radiazioni.
+        </p>
+     </div>
+    </div>
+  <div class="oggetto">
+      <div class="immagine">
+        <img src="Patriot Missile" alt="patriot missile" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Patriot Missile</h2>
+        <p>Un errore di arrotondamento in un sistema di temporizzazione del software del Patriot Missile causò il fallimento dell'intercettazione
+          di un missile Scud iracheno. Il missile colpì una caserma dell'esercito statunitense, uccidendo 28 soldati e causando una aumentata sfiducia nella tecnologia.
+        </p>
+     </div>
+    </div>
+   <div class="oggetto">
+      <div class="immagine">
+        <img src="bug" alt="millenium bug" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Millenium bug</h2>
+        <p>Sebbene non ci sia stata una grande catastrofe, il "Millennium Bug" ha richiesto investimenti massicci per evitare il collasso dei sistemi informatici. 
+          Il bug era causato dal fatto che molti software utilizzavano solo le ultime due cifre dell'anno (es. '99 per 1999), 
+          il che poteva portare a malfunzionamenti passando all'anno 2000.
+          Anche se il bug non causò gravi danni, il costo per la prevenzione fu enorme, pari a 100 miliardi di dollari.
+        </p>
+     </div>
+    </div>
+  <div class="oggetto">
+      <div class="immagine">
+        <img src="intel" alt="intel pentium" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Intel Pentium</h2>
+        <p>Un bug nei processori Intel Pentium causava errori di calcolo nelle divisioni in virgola mobile. 
+          Questo difetto divenne un problema di pubbliche relazioni per Intel dopo che gli scienziati iniziarono a notare discrepanze 
+          nei loro calcoli. Intel alla fine dovette ritirare i processori difettosi e rimborsare i clienti, perdendo 475 milioni di dollari.
+        </p>
+     </div>
+    </div>
+    <div class="oggetto">
+      <div class="immagine">
+        <img src="tesla.jpg" alt="Tesla Model S" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Tesla Model S</h2>
+        <p>Un aggiornamento del software del Tesla Model S causò il blocco dei freni a mano di alcune auto. 
+          In un caso, questo portò all'incendio e alla perdita completa di un'auto, oltre a un grosso rischio per la sicurezza
+        </p>
+     </div>
+    </div>
+    <div class="oggetto">
+      <div class="immagine">
+        <img src="AT" alt="AT&T" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>AT&T</h2>
+        <p>Un aggiornamento software difettoso nel sistema di commutazione di AT&T portò a un blocco che durò circa 9 ore. 
+          Durante questo periodo, milioni di chiamate telefoniche furono interrotte negli Stati Uniti.
+          Ciò causò un danno alla reputazione e perdite finanziarie per AT&T, oltre a disagio per milioni di utenti.
+          Il danno è stimato in decide di milioni di dollari.
+        </p>
+     </div>
+    </div>
+    <div class="oggetto">
+      <div class="immagine">
+        <img src="mcas.jpg" alt="MCAS" style=float:left; margin: 10px">
+      </div>
+     <div class="testo">
+       <h2>Sistema MCAS</h2>
+        <p>Il sistema MCAS (Maneuvering Characteristics Augmentation System) del Boeing 737 Max, progettato per correggere il comportamento 
+          di volo dell'aereo, aveva un bug che portava a una serie di incidenti aerei mortali. 
+          Questo errore portò alla perdita di controllo degli aerei in determinate situazioni, causando due incidenti fatali che uccisero
+          346 persone. La Boeing subì gravi perdite economiche, danni alla reputazione e costi enormi per riparare il software e 
+          certificare nuovamente il modello. L’aereo fu bloccato a terra per quasi due anni.
+          Il danno stimato è di oltre 20 miliardi di dollari, oltre alle molte vite perse
+        </p>
+     </div>
     </div>
 
+
+
+  
 </body>
+  
+    
+  
 </html>
