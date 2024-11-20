@@ -69,23 +69,24 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
-/* Logo Adam */
+/* Logo Adam - Ultra Wow */
 .logo {
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(90deg, #ff7f50, #ff6ec4, #ffc107);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  font-size: 3rem;
+  font-family: 'Dancing Script', cursive; /* Font Elegante */
+  background: linear-gradient(45deg, #ff5f6d, #ffc3a0, #ffb7b7); /* Gradiente di colori belli */
+  -webkit-background-clip: text; /* Applicare il gradiente al testo */
+  background-clip: text;
+  color: transparent; /* Rendi il testo trasparente per vedere il gradiente */
+  text-transform: uppercase; /* Testo maiuscolo */
+  letter-spacing: 5px; /* Spaziatura tra lettere */
+  font-weight: bold;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 6px 15px rgba(0, 0, 0, 0.3); /* Ombra intensa */
+  transition: transform 0.4s ease, text-shadow 0.4s ease; /* Animazioni morbide */
 }
 
 .logo:hover {
-  transform: scale(1.1);
-  text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+  transform: scale(1.2); /* Ingrandimento al passaggio del mouse */
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5); /* Ombre più forti */
 }
 
   
