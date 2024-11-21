@@ -3,30 +3,42 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #eaf4fc, #c9daf8);
-  color: #2c3e50;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: #fff;
+}
+
+/* Animazione sfondo */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Contenitore */
 .container {
-  background: #ffffff;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 30px;
   text-align: center;
   width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Titolo */
 h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #2980b9;
+  color: #fff;
 }
 
 /* Input Group */
@@ -37,23 +49,26 @@ h1 {
 
 .input-group label {
   font-weight: 600;
-  margin-bottom: 5px;
+  color: #f1f1f1;
   display: block;
-  color: #34495e;
+  margin-bottom: 5px;
 }
 
 .input-group input {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #bdc3c7;
-  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
   outline: none;
-  transition: border-color 0.3s;
+  font-size: 1rem;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .input-group input:focus {
-  border-color: #3498db;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.8);
 }
 
 /* Bottone */
@@ -62,25 +77,31 @@ h1 {
   padding: 15px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   border: none;
   border-radius: 8px;
   background: url('https://upload.wikimedia.org/wikipedia/commons/6/63/Monviso_from_Aosta_Valley.jpg') no-repeat center/cover;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 #calculate-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  background-blend-mode: overlay;
-  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Risultato */
 #result {
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #27ae60;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
