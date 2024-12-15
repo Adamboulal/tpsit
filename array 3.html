@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeri Primi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(20, 50px);
+            gap: 5px;
+            margin-top: 20px;
+        }
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            background-color: white;
+        }
+        .prime {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Numeri Primi</h1>
+    <div class="grid" id="grid"></div>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        const grid = document.getElementById('grid');
+        for (let i = 1; i <= 1000; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+            if (isPrime(i)) {
+                cell.classList.add('prime');
+            }
+            cell.textContent = i;
+            grid.appendChild(cell);
+        }
+    </script>
+</body>
+</html>
