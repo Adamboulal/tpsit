@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verifica simulazione</title>
+    <script>
+
+
+function isPrime(num) {
+    if (num <= 1) return true;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+
+function pari(numero){
+    if (numero % 2 == 0){
+        return "pari"
+
+    }else {
+        return "dispari"
+
+
+    }
+}
+function numero_casuale(){
+    let numero_casuale= Math.floor(Math.random()*1000);
+    if (isPrime(numero_casuale)){
+
+        document.getElementById("out1").innerHTML = `il numero è primo ed è ${pari(numero_casuale)}`;
+    }else{
+        document.getElementById("out1").innerHTML = `il numero non è primo ed ${pari(numero_casuale)}`;
+    }
+    console.log("il suo doppio è " + numero_casuale*2 + "  la sua metà intera : " +Math.floor(numero_casuale /2))
+    console.log("ilsuo complemento è "+ (1000-numero_casuale))
+    console.log("la somma al numero precedente e successivo è "+ (numero_casuale+numero_casuale+1+numero_casuale-1))
+    console.log(""+ (numero_casuale*3.14))
+
+}
+
+setInterval(numero_casuale,5000);
+
+
+
+    </script>
+</head>
+<body>
+    <p id="out1"></p>
+</body>
+</html>
