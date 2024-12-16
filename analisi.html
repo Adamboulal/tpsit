@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Numerica - Grafica Migliorata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #005f73;
+        }
+        p {
+            text-align: center;
+            font-size: 1.1em;
+        }
+        #numberProperties {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow-y: scroll;
+            height: 600px;
+        }
+        .numberRow {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .prime {
+            color: #e63946;
+            font-weight: bold;
+        }
+        .numberRow:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analisi Numerica</h1>
+    <p>Calcolo e visualizzazione delle proprietà numeriche</p>
+
+    <div id="numberProperties"></div>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function analyzeNumber(n) {
+            let properties = [];
+
+            // Pari o dispari
+            properties.push(n % 2 === 0 ? "Pari" : "Dispari");
+
+            // Primalità
+            let prime = isPrime(n);
+            if (prime) properties.push("Primo");
+
+            // Doppio e metà intera
+            properties.push(`Doppio: ${n * 2}`);
+            properties.push(`Metà intera: ${Math.floor(n / 2)}`);
+
+            // Complemento (1000 - n)
+            properties.push(`Complemento: ${1000 - n}`);
+
+            // Somma con il precedente e il successivo
+            properties.push(`Somma con precedente e successivo: ${n - 1 + n + n + 1}`);
+
+            // Moltiplicazione per 3.14
+            properties.push(`Moltiplicazione per 3.14: ${(n * 3.14).toFixed(2)}`);
+
+            // Moltiplicazione per 2.71
+            properties.push(`Moltiplicazione per 2.71: ${(n * 2.71).toFixed(2)}`);
+
+            return { prime, properties: properties.join(", ") };
+        }
+
+        let output = "";
+        for (let i = 1; i <= 10000; i++) {
+            let analysis = analyzeNumber(i);
+            output += `<div class="numberRow ${analysis.prime ? "prime" : ""}">${i}: ${analysis.properties}</div>`;
+        }
+
+        document.getElementById("numberProperties").innerHTML = output;
+    </script>
+</body>
+</html>
