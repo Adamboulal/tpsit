@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Numerica array1</title>
+</head>
+<body>
+ <h1>Analisi Numerica array1</h1>
+ <p>Imparo ad usare gli array con i numeri</p>
+ <p>Sviluppo algoritmi che inseriscono numeri particolari negli array</p>
+
+ <p>Numeri casuali:</p>
+ <p id="randomNumbers"></p>
+
+ <p>Numeri consecutivi:</p>
+ <p id="sequentialNumbers"></p>
+
+ <p>Numeri primi casuali:</p>
+ <p id="randomPrimes"></p>
+
+ <p>Numeri primi tra 1 e 100:</p>
+ <p id="primes1to100"></p>
+
+ <p>Fattori dei numeri da 1 a 100:</p>
+ <p id="factors1to100"></p>
+
+<script>
+    // 1. Stampa 100 numeri casuali tra 1 e 100
+    let randomNumbers = [];
+    for (let i = 0; i < 100; i++) {
+        randomNumbers.push(Math.floor(Math.random() * 100) + 1);
+    }
+    document.getElementById("randomNumbers").innerHTML = randomNumbers.join(", ");
+
+    // 2. Stampa 100 numeri consecutivi tra 1 e 1000
+    let sequentialNumbers = [];
+    for (let i = 1; i <= 100; i++) {
+        sequentialNumbers.push(i + 900); // Partendo da 901 a 1000
+    }
+    document.getElementById("sequentialNumbers").innerHTML = sequentialNumbers.join(", ");
+
+    // 3. Inserisci dentro un array 10 numeri primi casuali
+    function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    let randomPrimes = [];
+    while (randomPrimes.length < 10) {
+        let randNum = Math.floor(Math.random() * 100) + 1;
+        if (isPrime(randNum) && !randomPrimes.includes(randNum)) {
+            randomPrimes.push(randNum);
+        }
+    }
+    document.getElementById("randomPrimes").innerHTML = randomPrimes.join(", ");
+
+    // 4. Inserisci in un array i numeri primi tra 1 e 100
+    let primes1to100 = [];
+    for (let i = 1; i <= 100; i++) {
+        if (isPrime(i)) {
+            primes1to100.push(i);
+        }
+    }
+    document.getElementById("primes1to100").innerHTML = primes1to100.join(", ");
+
+    // 5. Stampa i numeri da 1 a 100 con accanto i loro fattori
+    function getFactors(num) {
+        let factors = [];
+        for (let i = 1; i <= num; i++) {
+            if (num % i === 0) {
+                factors.push(i);
+            }
+        }
+        return factors;
+    }
+
+    let factorsOutput = "";
+    for (let i = 1; i <= 100; i++) {
+        factorsOutput += `${i}: ${getFactors(i).join(", ")}<br>`;
+    }
+    document.getElementById("factors1to100").innerHTML = factorsOutput;
+</script>
+</body>
+</html>
