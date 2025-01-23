@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione Bootstrap - Design Elegante</title>
+    <!-- CSS di Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navbar fissa in alto */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background-color: #007bff;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .container {
+            padding-top: 80px; /* Distanza dal top per non coprire il contenuto */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #343a40;
+        }
+
+        /* Card Styling */
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            border-radius: 25px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .card-body {
+            background-color: #ffffff;
+        }
+
+        .card-img-top {
+            border-radius: 15px;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        /* Spaziatura tra i bottoni */
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar fissa in alto -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Lezione Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Titolo della sezione -->
+    <div class="section-title">
+        <h2>Layout con Bootstrap</h2>
+        <p>Esplora come il grid system e i componenti Bootstrap possono rendere il design del tuo sito più bello e funzionale!</p>
+    </div>
+
+    <!-- Grid con col- per tutte le dimensioni -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card p-3">
+                    <h5 class="card-title">Colonna 1</h5>
+                    <p>Contenuto della colonna 1.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card p-3">
+                    <h5 class="card-title">Colonna 2</h5>
+                    <p>Contenuto della colonna 2.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card p-3">
+                    <h5 class="card-title">Colonna 3</h5>
+                    <p>Contenuto della colonna 3.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid con col-md-6 per dispositivi desktop -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5 class="card-title">50% Larghezza su Desktop</h5>
+                    <p>Contenuto della colonna, su desktop occupa il 50% della larghezza.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5 class="card-title">50% Larghezza su Desktop</h5>
+                    <p>Contenuto della colonna, su desktop occupa il 50% della larghezza.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid responsive con col-sm-, col-md-, col-lg-, col-xl- -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card p-3">
+                    <h5 class="card-title">Responsive</h5>
+                    <p>Colonna responsive che cambia dimensione in base al dispositivo.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card p-3">
+                    <h5 class="card-title">Responsive</h5>
+                    <p>Colonna responsive che cambia dimensione in base al dispositivo.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card p-3">
+                    <h5 class="card-title">Responsive</h5>
+                    <p>Colonna responsive che cambia dimensione in base al dispositivo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottoni -->
+    <div class="container text-center mt-4">
+        <div class="btn-group">
+            <button class="btn btn-primary btn-lg">Primario</button>
+            <button class="btn btn-secondary btn-lg">Secondario</button>
+        </div>
+    </div>
+
+    <!-- Card -->
+    <div class="container mt-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Titolo della Card</h5>
+                <p class="card-text">Testo della card. Una descrizione più dettagliata può essere aggiunta qui.</p>
+                <a href="#" class="btn btn-primary">Vai</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS di Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
