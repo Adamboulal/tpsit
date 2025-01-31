@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intelligenza Artificiale e Robotica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+  
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">AI & Robotica</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sviluppo">Sviluppo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#applicazioni">Applicazioni</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sfide">Sfide</a></li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Cerca</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="bg-light text-center py-5" style="margin-top: 56px;">
+      <div class="container">
+        <h1 class="display-4">Intelligenza Artificiale e Robotica</h1>
+        <p class="lead">Esplora il futuro della tecnologia, le sue applicazioni e le sfide che ci attendono.</p>
+        <a class="btn btn-primary btn-lg" href="#sviluppo" role="button">Scopri di più</a>
+      </div>
+    </header>
+
+    <!-- Griglia contenuti principali -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Sviluppo storico</h2>
+          <p>L'intelligenza artificiale (AI) ha iniziato a svilupparsi negli anni '50 con lo studio di algoritmi capaci di apprendere e risolvere problemi.</p>
+          <a class="btn btn-secondary" href="#sviluppo" role="button">Dettagli »</a>
+        </div>
+        <div class="col-md-4">
+          <h2>Applicazioni pratiche</h2>
+          <p>Dall'assistenza sanitaria alle auto a guida autonoma, AI e robotica stanno trasformando numerosi settori industriali.</p>
+          <a class="btn btn-secondary" href="#applicazioni" role="button">Dettagli »</a>
+        </div>
+        <div class="col-md-4">
+          <h2>Sfide etiche</h2>
+          <p>Le decisioni prese dalle macchine sollevano interrogativi etici su responsabilità, bias e trasparenza.</p>
+          <a class="btn btn-secondary" href="#sfide" role="button">Dettagli »</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezione con immagini -->
+    <section id="sviluppo" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center">Sviluppo dell'Intelligenza Artificiale</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Dagli inizi come semplice ricerca accademica fino alle tecnologie avanzate di oggi, il percorso dell'intelligenza artificiale è stato straordinario.</p>
+            <ul>
+              <li>1956: Conio del termine "AI"</li>
+              <li>1980: Avvento dei sistemi esperti</li>
+              <li>2010: Deep learning e grandi dati</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <img src="https://via.placeholder.com/600x300" class="img-fluid" alt="Evoluzione AI">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards con applicazioni -->
+    <section id="applicazioni" class="py-5">
+      <div class="container">
+        <h2 class="text-center">Applicazioni della Robotica</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Sanità">
+              <div class="card-body">
+                <h5 class="card-title">Sanità</h5>
+                <p class="card-text">AI supporta diagnosi e trattamenti personalizzati.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Industria">
+              <div class="card-body">
+                <h5 class="card-title">Industria</h5>
+                <p class="card-text">Robot automatizzano processi complessi.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Automotive">
+              <div class="card-body">
+                <h5 class="card-title">Automotive</h5>
+                <p class="card-text">Veicoli autonomi stanno rivoluzionando i trasporti.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accordion con sfide -->
+    <section id="sfide" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center">Sfide dell'AI</h2>
+        <div class="accordion" id="accordionChallenges">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Etica e responsabilità
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionChallenges">
+              <div class="accordion-body">
+                Chi è responsabile per le decisioni prese da un'IA? Questo è un problema ancora irrisolto.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Bias nei dati
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionChallenges">
+              <div class="accordion-body">
+                Dati distorti possono portare a decisioni discriminatorie prese da algoritmi.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Impatto sul lavoro
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionChallenges">
+              <div class="accordion-body">
+                L'automazione potrebbe eliminare molti posti di lavoro, ma crearne di nuovi.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>© 2025 Intelligenza Artificiale e Robotica - Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
