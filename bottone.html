@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="salvatempo()">button1</button>
+    <button onclick="salvatempo()">button2</button>
+    <button onclick="salvatempo()">button3</button>
+    <button onclick="salvatempo()">button4</button>
+
+    <p id="tempi">-</p>
+    <p id="tempiTrascorsi">-</p>
+
+    <script>
+        const tempiclick = [];
+        let primoClick = 0;
+        let tempiTrascorsi =""
+
+        function salvatempo() {
+            const oraattuale = new Date();
+            tempiclick.push(oraattuale);
+
+            if (primoClick == 0) {
+                primoClick = oraattuale;
+            } else {
+                const differenza = oraattuale - primoClick;
+                const secondi = differenza / 1000;
+                tempiTrascorsi= secondi;
+            }
+
+            document.getElementById("tempi").innerHTML = "Tempo: " + oraattuale;
+            document.getElementById("tempiTrascorsi").innerHTML = "Tempo trascorso dal primo click: " + tempiTrascorsi +", ";
+        }
+    </script>
+</body>
+</html>
