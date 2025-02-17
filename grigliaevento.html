@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griglie bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .box {
+            height: 100px;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            cursor:pointer;
+        }
+        .bg-1{ background-color: red;}
+        .bg-2{ background-color: blue;}
+        .bg-3{ background-color: green;}
+        .bg-4{ background-color: orange;}
+        .bg-5{ background-color: purple;}
+        .bg-6{ background-color: brown;}
+        .bg-7 { background-color: pink; }
+        .bg-8 { background-color: cyan; }
+        .bg-9 { background-color: yellow; color: black; }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="container mt-5">
+
+<h2 class="text-center">Griglia 2x2</h2>
+
+<div class="d-flex justify-content-center align-items-center">
+
+<div class="row">
+
+    <div class="col-6 box bg-1" onclick="handleClick('Rosso')">Rosso</div>
+
+    <div class="col-6 box bg-2" onclick="handleClick('Blu')">Blu</div>
+
+    <div class="col-6 box bg-3" onclick="handleClick('Verde')">Verde</div>
+
+    <div class="col-6 box bg-4" onclick="handleClick('Arancione')">Arancione</div>
+
+</div>
+
+</div>
+
+
+
+<h2 class="text-center mt-5">Griglia 3x3</h2>
+
+<div class="row">
+
+<div class="col-4 box bg-1" onclick="handleClick('1')">1</div>
+
+<div class="col-4 box bg-2" onclick="handleClick('2')">2</div>
+
+<div class="col-4 box bg-3" onclick="handleClick('3')">3</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-4 box bg-4" onclick="handleClick('4')">4</div>
+
+<div class="col-4 box bg-5" onclick="handleClick('5')">5</div>
+
+<div class="col-4 box bg-6" onclick="handleClick('6')">6</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-4 box bg-7" onclick="handleClick('7')">7</div>
+
+<div class="col-4 box bg-8" onclick="handleClick('8')">8</div>
+
+<div class="col-4 box bg-9" onclick="handleClick('9')">9</div>
+
+</div>
+
+</div>
+
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+
+
+</body>
+
+</html>
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
