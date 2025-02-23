@@ -19,6 +19,11 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
+            margin: 0 auto;
+            max-width: 480px; /* Limita la larghezza per una visualizzazione migliore */
+        }
+        .btn-memory:disabled {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
@@ -28,7 +33,9 @@
         <div class="mt-3">
             <button id="start-btn" class="btn btn-primary">Start</button>
         </div>
-        <div class="grid-container mt-5" id="grid"></div>
+        <div class="grid-container mt-5" id="grid">
+            <!-- La griglia sarà già generata da JavaScript -->
+        </div>
         <div class="mt-3">
             <p id="status-message"></p>
             <p>Punteggio: <span id="score">0</span></p>
@@ -36,6 +43,6 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="gamememory.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
