@@ -9,29 +9,34 @@ let userSequence = [];
 let score = 0;
 let isGameActive = false;
 
-// Funzione per generare la sequenza casuale
-function generateSequence() {
-    const randomIndex = Math.floor(Math.random() * gridSize * gridSize);
-    sequence.push(randomIndex);
-}
-
-// Funzione per creare la griglia di pulsanti
+// Funzione per creare la griglia 4x4
 function createGrid() {
     grid.innerHTML = "";  // Reset della griglia
     for (let i = 0; i < gridSize * gridSize; i++) {
         const button = document.createElement("button");
         button.classList.add("btn", "btn-memory");
         button.dataset.index = i;
+        button.disabled = false; // Assicuriamoci che tutti i pulsanti siano attivi all'inizio
         button.addEventListener("click", () => handleUserInput(i));
         grid.appendChild(button);
     }
 }
 
+// Funzione per generare la sequenza casuale
+function generateSequence() {
+    const randomIndex = Math.floor(Math.random() * gridSize * gridSize);
+    sequence.push(randomIndex);
+}
+
 // Funzione per mostrare la sequenza
 function showSequence() {
     let index = 0;
+    const buttons = document.querySelectorAll(".btn-memory");
+
+    // Disabilita i pulsanti per evitare interazioni dell'utente durante la sequenza
+    buttons.forEach(button => button.disabled = true);
+
     const interval = setInterval(() => {
-        const buttons = document.querySelectorAll(".btn-memory");
         const button = buttons[sequence[index]];
         button.classList.add("active");
         setTimeout(() => {
@@ -41,6 +46,8 @@ function showSequence() {
         index++;
         if (index === sequence.length) {
             clearInterval(interval);
+            // Riabilita i pulsanti una volta che la sequenza è finita
+            buttons.forEach(button => button.disabled = false);
         }
     }, 1000);
 }
@@ -89,7 +96,7 @@ function startGame() {
     sequence = [];
     userSequence = [];
     statusMessage.textContent = "Inizia a giocare!";
-    createGrid();
+    createGrid();  // Crea la griglia 4x4
     generateSequence();
     showSequence();
     isGameActive = true;
