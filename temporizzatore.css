@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+#container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transition: all 1s;
+}
+
+.blu {
+    background-color: blue;
+}
+
+.giallo {
+    background-color: yellow;
+}
