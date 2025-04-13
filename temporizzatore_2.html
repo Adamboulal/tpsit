@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercitazioni con Temporizzatore</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    /* Esercizio 1 */
+    #box {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      border: 1px solid black;
+      margin-bottom: 50px;
+    }
+
+    #square {
+      width: 20px;
+      height: 20px;
+      background-color: green;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Esercizio 2 */
+    #container {
+      display: flex;
+      gap: 5px;
+    }
+
+    .square {
+      width: 40px;
+      height: 40px;
+      background-color: yellow;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>I.I.S. “Maxwell” – Nichelino</h1>
+  <h3>Esercitazioni su temporizzatore</h3>
+
+  <!-- Esercizio 1 -->
+  <h2>Esercizio 1: Movimento del quadrato in senso orario</h2>
+  <div id="box">
+    <div id="square"></div>
+  </div>
+
+  <!-- Esercizio 2 -->
+  <h2>Esercizio 2: Scorrimento quadrati rossi</h2>
+  <div id="container"></div>
+
+  <script>
+    // Esercizio 1
+    const square = document.getElementById("square");
+    let x = 0, y = 0;
+    let step = 2;
+    let direction = "east";
+
+    setInterval(() => {
+      if (direction === "east") {
+        x += step;
+        if (x >= 380) direction = "south";
+      } else if (direction === "south") {
+        y += step;
+        if (y >= 380) direction = "west";
+      } else if (direction === "west") {
+        x -= step;
+        if (x <= 0) direction = "north";
+      } else if (direction === "north") {
+        y -= step;
+        if (y <= 0) direction = "east";
+      }
+      square.style.left = x + "px";
+      square.style.top = y + "px";
+    }, 20);
+
+    // Esercizio 2
+    const container = document.getElementById("container");
+    const squares = [];
+
+    for (let i = 0; i < 8; i++) {
+      const div = document.createElement("div");
+      div.classList.add("square");
+      squares.push(div);
+      container.appendChild(div);
+    }
+
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < squares.length) {
+        squares[index].style.backgroundColor = "red";
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 500);
+  </script>
+
+</body>
+</html>
