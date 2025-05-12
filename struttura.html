@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioco del Cattura la Palla</title>
+    <style>
+        /* FONT IMPORT */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: backgroundShift 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        select, button {
+            font-size: 1em;
+            padding: 14px 22px;
+            margin: 15px;
+            border-radius: 14px;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        select:hover, button:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .game-container {
+            position: relative;
+            width: 100vw;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+        
+        .timer {
+            font-size: 3.2em;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .message {
+            font-size: 1.6em;
+            color: #ffffffcc;
+            margin-top: 15px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .ball {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ff416c, #ff4b2b);
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+            animation: float 2s ease-in-out infinite alternate;
+            transition: transform 0.2s ease-in-out, top 0.2s, left 0.2s;
+        }
+        
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+        
+        button {
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid #ffffff44;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        button:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        .ball {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ff6a00, #ee0979);
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease-in-out;
+            animation: float 2s ease-in-out infinite alternate;
+            z-index: 10;
+        }
+
+        .ball:hover {
+            transform: scale(1.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ff6a00, #ee0979);
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            animation: float 2s ease-in-out infinite alternate;
+            transition: transform 0.2s ease-in-out;
+            z-index: 10;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-align: center;
+        }
+
+        select {
+            font-size: 1em;
+            padding: 14px 22px;
+            margin: 15px;
+            border-radius: 14px;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        select:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #000;
+        }
+
+        option {
+            color: #fff;  /* Colore di default per il testo delle opzioni */
+        }
+
+        option[value="easy"]:hover {
+            background-color: #3adb76;  /* Verde quando passi sopra */
+            color: white;
+        }
+
+        option[value="medium"]:hover {
+            background-color: #f1c40f;  /* Giallo quando passi sopra */
+            color: black;
+        }
+
+        option[value="hard"]:hover {
+            background-color: #e74c3c;  /* Rosso quando passi sopra */
+            color: white;
+        }
+
+        select:focus {
+            border: 2px solid #ffffff;
+            color: #000;
+        }
+
+        select {
+            font-size: 1em;
+            padding: 14px 22px;
+            margin: 15px;
+            border-radius: 14px;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: color 0.4s ease, background 0.3s ease;
+            text-align: center;
+        }
+
+select:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+option {
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+        </style>
+        
+        
+</head>
+<body>
+    <select id="difficultySelect">
+        <option value="easy">✅ Facile</option>
+        <option value="medium" selected>⚠️ Medio</option>
+        <option value="hard">🔥 Difficile</option>
+    </select>
+    
+    <div class="game-container">
+        <div class="timer" id="timerDisplay">00:00</div>
+        <div class="message" id="gameMessage">Clicca sulla palla prima che il timer scada!</div>
+        <button id="startButton">Inizia il gioco</button>
+        <button id="resetButton" class="hidden">Gioca di nuovo</button>
+        <div class="score" id="scoreDisplay">Punteggio: 0</div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
