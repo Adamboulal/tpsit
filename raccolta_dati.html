@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<title>Gioco: clicca il numero più grande</title>
+<style>
+  body { font-family: Arial; text-align: center; margin: 20px; }
+  #container { margin: 20px auto; max-width: 400px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .card { width: 80px; height: 80px; background: #cce; line-height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; }
+  .correct { background: #4c4; color: white; }
+  .wrong { background: #c44; color: white; pointer-events: none; }
+  button { padding: 10px 20px; font-size: 16px; }
+  #message { height: 24px; margin: 10px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>Clicca il numero più grande</h2>
+<div id="container"></div>
+<button id="startBtn">Inizia Gioco</button>
+<div id="message"></div>
+<p>Tempi: <span id="times">-</span></p>
+<p>Media: <span id="media">-</span> ms | Min: <span id="min">-</span> ms | Max: <span id="max">-</span> ms</p>
+
+<script>
+  // Seleziono elementi HTML importanti
+  const container = document.getElementById('container');
+  const startBtn = document.getElementById('startBtn');
+  const message = document.getElementById('message');
+  const timesDisplay = document.getElementById('times');
+  const mediaDisplay = document.getElementById('media');
+  const minDisplay = document.getElementById('min');
+  const maxDisplay = document.getElementById('max');
+
+  let reactionTimes = [];  // qui salviamo i tempi di reazione
+  let startTime;           // tempo in cui appare la schermata con i numeri
+  let round = 0;           // contatore round
+  const maxRounds = 10;    // massimo numero di round
+  let timeoutId;           // per il timeout di 8 secondi
+
+  // Funzione che genera 8 numeri casuali diversi da 1 a 99
+  function generateNumbers() {
+    const nums = new Set();
+    while (nums.size < 8) {
+      nums.add(Math.floor(Math.random() * 99) + 1);
+    }
+    return Array.from(nums);
+  }
+
+  // Funzione che calcola media, minimo e massimo dei tempi
+  function calculateStats(arr) {
+    if (arr.length === 0) return { avg: '-', min: '-', max: '-' };
+    const sum = arr.reduce((a, b) => a + b, 0);
+    return {
+      avg: Math.round(sum / arr.length),
+      min: Math.min(...arr),
+      max: Math.max(...arr)
+    };
+  }
+
+  // Funzione per mostrare i numeri sullo schermo
+  function showNumbers() {
+    container.innerHTML = '';   // pulisco le carte precedenti
+    message.textContent = '';
+    const numbers = generateNumbers();
+    const maxNum = Math.max(...numbers);
+    startTime = performance.now();  // prendo il tempo esatto in millisecondi
+
+    // Creo un div per ogni numero e lo aggiungo al container
+    numbers.forEach(num => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.textContent = num;
+
+      card.onclick = () => {
+        clearTimeout(timeoutId);  // cancello timeout perché ho cliccato
+        const reactionTime = Math.round(performance.now() - startTime);
+
+        if (num === maxNum) {
+          card.classList.add('correct');
+          reactionTimes.push(reactionTime);
+          updateStats();
+          message.textContent = `Bravo! Tempo: ${reactionTime} ms`;
+          disableCards();
+          setTimeout(nextRound, 1000); // vai al prossimo round dopo 1 secondo
+        } else {
+          card.classList.add('wrong');
+          message.textContent = 'Sbagliato! Riprova.';
+          card.style.pointerEvents = 'none'; // non puoi ricliccare su questa carta
+        }
+      };
+
+      container.appendChild(card);
+    });
+
+    // Timeout dopo 8 secondi se non clicchi
+    timeoutId = setTimeout(() => {
+      reactionTimes.push(8000); // tempo max 8000 ms se timeout
+      message.textContent = 'Tempo scaduto! Passiamo al prossimo round.';
+      updateStats();
+      disableCards();
+      setTimeout(nextRound, 1000);
+    }, 8000);
+  }
+
+  // Funzione per disabilitare tutte le carte (click disabilitati)
+  function disableCards() {
+    Array.from(container.children).forEach(card => {
+      card.style.pointerEvents = 'none';
+    });
+  }
+
+  // Aggiorna la visualizzazione dei tempi e delle statistiche
+  function updateStats() {
+    timesDisplay.textContent = reactionTimes.join(', ');
+    const stats = calculateStats(reactionTimes);
+    mediaDisplay.textContent = stats.avg;
+    minDisplay.textContent = stats.min;
+    maxDisplay.textContent = stats.max;
+  }
+
+  // Passa al round successivo o termina il gioco
+  function nextRound() {
+    round++;
+    if (round >= maxRounds) {
+      message.textContent = 'Gioco terminato! Complimenti!';
+      alert('Fine gioco! Tempi: ' + reactionTimes.join(', ') + ' ms');
+      resetGame();
+    } else {
+      showNumbers();
+    }
+  }
+
+  // Ripristina lo stato iniziale per ricominciare il gioco
+  function resetGame() {
+    container.innerHTML = '';
+    startBtn.disabled = false;
+    round = 0;
+    reactionTimes = [];
+    timesDisplay.textContent = '-';
+    mediaDisplay.textContent = '-';
+    minDisplay.textContent = '-';
+    maxDisplay.textContent = '-';
+  }
+
+  // Funzione per iniziare il gioco
+  function startGame() {
+    startBtn.disabled = true;
+    message.textContent = '';
+    reactionTimes = [];
+    round = 0;
+    showNumbers();
+  }
+
+  // Associo il click al pulsante inizia
+  startBtn.onclick = startGame;
+</script>
+
+</body>
+</html>
